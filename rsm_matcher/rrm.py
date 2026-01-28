@@ -410,16 +410,16 @@ class RAGMatcher:
             if api_key:
                 genai.configure(api_key=api_key)
                 self.llm = genai.GenerativeModel('gemini-1.5-flash')
-                print("✅ Gemini LLM enabled for enhanced explanations")
+                print(" Gemini LLM enabled for enhanced explanations")
             else:
                 self.use_llm = False
-                print("⚠️  GEMINI_API_KEY not found. Using rule-based explanations.")
+                print("  GEMINI_API_KEY not found. Using rule-based explanations.")
                 print("   Set API key: export GEMINI_API_KEY='your-key' (Linux/Mac)")
                 print("   Or: set GEMINI_API_KEY=your-key (Windows)")
         else:
             self.llm = None
             if not GEMINI_AVAILABLE:
-                print("⚠️  google-generativeai not installed. Using rule-based explanations.")
+                print("  google-generativeai not installed. Using rule-based explanations.")
     
     # ========================================================================
     # INGESTION PHASE
@@ -484,11 +484,11 @@ class RAGMatcher:
         Returns:
             Dictionary mapping resume sections to retrieved JD chunks
         """
-        print("\n🔍 Retrieving Relevant JD Chunks...")
+        print("\n Retrieving Relevant JD Chunks...")
         
         # Step 1: Parse resume
         resume_sections = self.resume_parser.parse(resume_text)
-        print(f"  ✓ Parsed {len(resume_sections)} resume sections")
+        print(f"  Parsed {len(resume_sections)} resume sections")
         
         # Step 2 & 3: Embed and retrieve for each section
         retrievals = {}
@@ -514,7 +514,7 @@ class RAGMatcher:
             ]
             
             retrievals[section_name] = retrieval_results
-            print(f"  ✓ Retrieved {len(retrieval_results)} chunks for '{section_name}'")
+            print(f"   Retrieved {len(retrieval_results)} chunks for '{section_name}'")
         
         return retrievals
     

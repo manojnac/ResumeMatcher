@@ -969,7 +969,7 @@ def demo_sample():
 def demo():
     """Main demo function - choose between interactive or sample mode"""
     print("\n" + "="*70)
-    print("🚀 RESUME-JD MATCHER USING RAG")
+    print(" RESUME-JD MATCHER USING RAG")
     print("="*70)
     print("\nChoose mode:")
     print("1. Interactive mode (enter your own JD and resume)")
@@ -984,10 +984,10 @@ def demo():
     elif choice == "2":
         demo_sample()
     elif choice == "3":
-        print("\n👋 Goodbye!")
+        print("\n Goodbye!")
         return
     else:
-        print("\n❌ Invalid choice. Running sample mode by default.\n")
+        print("\n Invalid choice. Running sample mode by default.\n")
         demo_sample()
 
 
